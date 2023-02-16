@@ -1,0 +1,1 @@
+This project is an landing page that displays random famous quotes with a different background color each time a button is clicked or automaticly show a new quote after a certain time limit has been reach.
