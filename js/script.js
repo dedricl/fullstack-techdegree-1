@@ -78,7 +78,7 @@ const printQuote = () => {
 };
  //document.body.innerHTML
 
- setInterval(alert("Hello"),2000)
+ setInterval(printQuote,20000)
 
 
 /***
