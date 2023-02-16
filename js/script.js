@@ -3,12 +3,9 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+ * A array of famous quotes objects
 ***/
 const quotes = [
   {
@@ -37,30 +34,33 @@ const quotes = [
 ];
 
 
-
 /***
- * `getRandomQuote` function
+ * `getRandomQuote` function to  obtain a random quote
 ***/
 const getRandomQuote = () => {
 
-  let randomNumber = Math.floor(Math.random() * quotes.length  ) 
+  let randomNumber = Math.floor(Math.random() * quotes.length); 
   return quotes[randomNumber];
 };
 
+
+/***
+ * `background-color` function to change background to random color
+***/
 const backgroundColor = () => {
   let color = Math.floor(Math.random() * 255)
-  return color
+  return color;
 }
 
 
 /***
- * `printQuote` function
+ * `printQuote` function to display to the user
 ***/
 const printQuote = () => {
   const randomQuote = getRandomQuote();
 
   let html = `<p class = "quote">${randomQuote.quote}</p>
-              <p class = "source">${randomQuote.source}`
+              <p class = "source">${randomQuote.source}`;
 
               if (randomQuote.citation) {
                html += `<span class = "citation">${randomQuote.citation}</span>`
@@ -71,14 +71,16 @@ const printQuote = () => {
               if (randomQuote.tags) {
                 html += `<span class = "year">${randomQuote.tags}</span>`
               }
-              html += `</p>`
+              html += `</p>`;
 
   document.getElementById('quote-box').innerHTML = html;  
-  document.body.style.backgroundColor = `rgb(${backgroundColor()},${backgroundColor()},${backgroundColor()})`   
+  document.body.style.backgroundColor = `rgb(${backgroundColor()},${backgroundColor()},${backgroundColor()})` ;  
 };
- //document.body.innerHTML
 
- setInterval(printQuote,20000)
+/***
+ * `setInterval` function to  obtain a random quote automactically
+***/
+ setInterval(printQuote,20000);
 
 
 /***
